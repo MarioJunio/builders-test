@@ -1,0 +1,115 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "126ebafe-9397-41ac-8e6e-ebe54893e2e8": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 430,
+                    "y": 110
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "44e1f1cd-37e6-4115-b73a-9622f15b1a30"
+                ]
+            },
+            "44e1f1cd-37e6-4115-b73a-9622f15b1a30": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 612.1661563181103,
+                    "y": 106.94739928194565
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "dc5e84d4-896e-459f-87be-197c616388e5": {
+                "source": {
+                    "id": "126ebafe-9397-41ac-8e6e-ebe54893e2e8"
+                },
+                "target": {
+                    "id": "44e1f1cd-37e6-4115-b73a-9622f15b1a30"
+                },
+                "z": 1
+            }
+        }
+    },
+    "Resources": {
+        "EC2IKVNN": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-0aeeebd8d2ab47354",
+                "InstanceType": "t2.micro",
+                "KeyName": "mj-ec2-key",
+                "SecurityGroupIds": [
+                    {
+                        "Ref": "EC2SG58BG5"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "126ebafe-9397-41ac-8e6e-ebe54893e2e8"
+                }
+            }
+        },
+        "EC2SG58BG5": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Expose customer api to public",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 22,
+                        "ToPort": 22,
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 22,
+                        "ToPort": 22,
+                        "CidrIpv6": "::0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 8080,
+                        "ToPort": 8080,
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 8080,
+                        "ToPort": 8080,
+                        "CidrIpv6": "::/0"
+                    }
+                ],
+                "SecurityGroupEgress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 8080,
+                        "ToPort": 8080,
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 8080,
+                        "ToPort": 8080,
+                        "CidrIpv6": "::/0"
+                    }
+                ],
+                "VpcId": "vpc-020c957f"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "44e1f1cd-37e6-4115-b73a-9622f15b1a30"
+                }
+            }
+        }
+    }
+}
