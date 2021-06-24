@@ -5,7 +5,7 @@
 
 - Para realizar o cache das informações recuperadas do repositório(banco de dados) foi utilizado o **redis** pois possui uma boa integração com o spring boot.
 
-<img src="img_document/9.jpg" width="200" height="100">
+<img src="img_document/9.png" width="200" height="100">
 
 ### Aplicação:
 
