@@ -3,7 +3,7 @@
 
 <img src="img_document/1.jpg" width="200" height="100">
 
-- Para realizar o cache das informações recuperadas do repositório(banco de dados) foi utilizado o **redis** pois possui uma boa integração com o spring boot.
+- Para realizar o cache das as informações recuperadas do repositório(banco de dados) foi utilizado o **redis**, pois possui uma boa integração com o spring boot.
 
 <img src="img_document/9.png" width="200" height="100">
 
@@ -17,7 +17,7 @@
 
 - Para criar um novo cliente foi criado um recurso que expõe o endpoint **POST /customers**, que recebe como corpo os atributos: (name, email, phone, document, gender).
 
-- Para buscar os clientes foi criado um recurso que expõe o endpoint **GET /customers**, que permite a filtragem por parâmetros na busca podem ser usados os seguintes atributos para filtrar: (id, name, email, phone, document, gender).
+- Para buscar os clientes foi criado um recurso que expõe o endpoint **GET /customers**, que permite a filtragem por parâmetros na busca e podem ser usados os seguintes atributos para filtrar: (id, name, email, phone, document, gender).
 
 - Para buscar um cliente específico por id foi criado um recurso que expõe o endpoint **GET /customers/{id}**, que permite a busca de um cliente específico por id.
 
